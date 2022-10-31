@@ -16,7 +16,7 @@ const wordArray2 = [
   'y','a','r','o','s','l','a','v'
 ]
 
-export const Home : NextPage = () => {
+const Home : NextPage = () => {
   return (
     <div className={styles.home}>
       <Head>
@@ -53,3 +53,5 @@ export const Home : NextPage = () => {
     </div>
   )
 }
+
+export default Home
