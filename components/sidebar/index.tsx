@@ -1,9 +1,15 @@
-import React from 'react'
+import React, {Dispatch, SetStateAction} from 'react'
 import {Github, Gmail, Linkedin, Logo, Telegram} from "../iconsComponent"
 import Link from "next/link"
 import styles from "./styles.module.scss"
 
-export const SideBar = ({ setOpen }) => {
+interface ISideBar {
+  setOpen: Dispatch<SetStateAction<boolean>>
+}
+
+export const SideBar : React.FC<ISideBar> = ({ setOpen }) => {
+
+  console.log(setOpen)
   return (
     <div className={styles.sidebar}>
       <div className={styles.sidebar__logo}>

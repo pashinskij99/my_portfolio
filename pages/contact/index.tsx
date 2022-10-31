@@ -4,9 +4,10 @@ import { TitlePage } from '../../components/titlePage'
 import { H3, P2 } from '../../components/typography'
 import clsx from 'clsx'
 import ContactForm from '../../components/contactForm'
+import { NextPage } from 'next'
 // import background_svg from '../../assets/images/contact/location.svg';
 
-const Contact = () => {
+const Contact : NextPage = () => {
   return (
     <div className={styles.contact}>
       <div className={clsx('container', styles.container)}>

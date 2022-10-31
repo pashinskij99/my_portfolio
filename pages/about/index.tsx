@@ -37,7 +37,8 @@ const tabsContent = [
 const About : NextPage = () => {
 	const [ tabActive, setTabActive ] = useState(tabsName[0])
 
-	const handleTabClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
+	// const handleTabClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
+	const handleTabClick = (event: any): void => {
 		setTabActive(event.target.textContent)
 	}
 

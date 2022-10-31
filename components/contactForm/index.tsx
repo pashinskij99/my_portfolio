@@ -8,9 +8,9 @@ type Inputs = {
   exampleRequired: string,
 };
 
-const ContactForm = () => {
+const ContactForm : React.FC = () => {
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
+  const { handleSubmit } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
 
   return (
