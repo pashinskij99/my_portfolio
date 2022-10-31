@@ -1,0 +1,59 @@
+@import '../../styles/variables';
+@import '../../styles/mixin';
+@import '../../styles/animations';
+
+.titleH1 {
+  font-family: $font_aBlackLives;
+  font-weight: 900;
+  font-size: 8.9rem;
+  line-height: 117.9%;
+  letter-spacing: 0.03em;
+  margin: 0;
+  transition: all 0.3s;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+
+  @include respond(tab-land) {
+    font-size: 8rem;
+  }
+  @include respond(tab-port) {
+    font-size: 7.5rem;
+  }
+  @include respond(phone) {
+    font-size: 5.5rem;
+  }
+  @include respond(small-phone) {
+    font-size: 4.5rem;
+    line-height: 137.9%;
+  }
+}
+
+.titleH2 {
+  font-family: $font_aBlackLives;
+  font-weight: 900;
+  font-size: 6.4rem;
+  letter-spacing: 0.03em;
+}
+
+.titleH3 {
+  font-family: $font_aBlackLives;
+  font-weight: 900;
+  font-size: 2.2rem;
+  letter-spacing: 0.06em;
+  color: rgba($color-title-pages, 0.3);
+}
+
+.paragraphP1 {
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.7rem;
+  letter-spacing: 0.06em;
+}
+
+.paragraphP2 {
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 176.9%;
+  letter-spacing: 0.06em;
+  color: $color-white;
+}

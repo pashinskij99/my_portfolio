@@ -1,0 +1,58 @@
+@import "../../styles/variables";
+
+.contact {
+  padding-bottom: 19rem;
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    //.backgroundImg {
+    //  position: fixed;
+    //  top: 50%;
+    //  right: 0;
+    //  transform: translateY(-50%);
+    //  z-index: 0;
+    //}
+    .contactContainer {
+      display: flex;
+      align-items: center;
+      flex-grow: 2;
+      padding: 0 5rem;
+      z-index: 1;
+      //background: url("../../assets/images/contact/location.png") no-repeat center right;
+      //background-size: 65%;
+      .contactInner {
+        width: 100%;
+        background: url("../../assets/images/contact/location.png") no-repeat center right;
+        background-size: 65%;
+      }
+      .contactHeader {
+        width: 46rem;
+        .contactTitle {
+          font-size: 2.4rem;
+          color: rgba($color-white, 0.4);
+        }
+        .contactParagraphFirst {
+          line-height: 147.4%;
+          letter-spacing: 0.08em;
+          margin-top: 1.8rem;
+        }
+        .contactParagraphSecondary {
+          font-size: 1.6rem;
+          line-height: 147.4%;
+          margin-top: 2.5rem;
+          span {
+            color: #7884F4;
+
+          }
+          a {
+            color: #7884F4;
+            margin-left: 1.2rem;
+            padding: 0 .5rem 0.5rem;
+            border-bottom: .1rem solid #7884F4;
+          }
+        }
+      }
+    }
+  }
+}

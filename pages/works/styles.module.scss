@@ -1,0 +1,156 @@
+@import '../../styles/variables';
+@import '../../styles/mixin';
+
+.works {
+	min-height: 100vh;
+	.container {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+	.worksListWrapper {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		position: relative;
+		width: 100%;
+		flex-grow: 2;
+		@include respond(tab-port) {
+			padding: 10rem 0;
+		}
+		.worksList {
+			margin: 0 auto;
+			max-width: 100rem;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 2rem;
+			@include respond(tab-port) {
+				grid-template-columns: repeat(2, 1fr);
+				grid-gap: 4rem;
+			}
+			@include respond(phone) {
+				grid-template-columns: 1fr;
+			}
+			.worksListItem {
+				position: relative;
+				transform: scale(1);
+				transition: transform 0.3s ease-out;
+				&::after {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+
+					border-radius: .2rem;
+					background: linear-gradient(180deg, $color-black -10.42%, rgba(0, 0, 0, 0) 203.29%);
+
+					opacity: 0;
+					visibility: hidden;
+					pointer-events: none;
+					touch-action: none;
+					transition: all 0.3s ease-in-out;
+				}
+				&::before {
+					content: "View";
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%, -50%) scale(0);
+					width: 8.8rem;
+					height: 8.8rem;
+
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					background: #6699FF;
+					border-radius: 50%;
+
+					font-size: 1.8rem;
+					line-height: 117.9%;
+					letter-spacing: 0.06em;
+					color: $color-black;
+					z-index: 1;
+
+					opacity: 0;
+					visibility: hidden;
+					pointer-events: none;
+					touch-action: none;
+					transition: all 0.3s ease-out;
+				}
+				&:hover {
+					transform: scale(1.05);
+					&::after, &::before {
+						opacity: 1;
+						visibility: visible;
+					}
+					&::before {
+						transform: translate(-50%, -50%) scale(1);
+					}
+				}
+				.worksListItemLink {
+					width: 100%;
+					img {
+						width: 100%;
+						height: 100%;
+						border-radius: .2rem;
+					}
+				}
+			}
+		}
+
+		.hrScroll {
+			position: absolute;
+			left: 12rem;
+			top: 0;
+			height: 100%;
+			visibility: hidden;
+			opacity: 0;
+			transition: all 0.3s ease-out;
+			&.active {
+				visibility: visible;
+				opacity: 1;
+			}
+			hr {
+				height: 100%;
+				width: .2rem;
+				background-color: rgba($color-white, 0.05);
+				border: none;
+			}
+			.btnScrollToTop {
+				position: absolute;
+				bottom: 3rem;
+				width: 13rem;
+				right: 0rem;
+				white-space: nowrap;
+				transform: rotate(-90deg) translate(50%, 100%);
+				span {
+					font-weight: 600;
+					font-size: 2rem;
+					line-height: 117.9%;
+					letter-spacing: 0.05em;
+					color: rgba($color-white, 0.1);
+				}
+				.arrowRight {
+					margin-left: 2.5rem;
+					height: 1.5rem;
+					width: 2rem;
+					path {
+						stroke: rgba($color-white, 0.1);
+						stroke-width: 2px;
+					}
+				}
+			}
+		}
+
+	}
+
+	.worksBtnMoreWrapper {
+		width: 100%;
+		text-align: center;
+		margin-top: 6rem;
+	}
+}
+

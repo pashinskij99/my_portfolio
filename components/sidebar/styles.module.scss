@@ -1,0 +1,71 @@
+@import '../../styles/variables';
+@import '../../styles/mixin';
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $sidebar-width;
+  height: 100vh;
+  text-align: center;
+  background-color: rgba(13, 12, 12, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: translateX(0);
+  z-index: 1;
+  transition: transform 0.3s ease-out;
+  @include respond(phone) {
+    transform: translateX(-100%);
+  }
+  &__logo {}
+  &__logoImg {
+    width: 6.6rem;
+    height: 8rem;
+  }
+  &__nav {
+    width: 100%;
+  }
+  &__ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__li {
+    display: block;
+    position: relative;
+    width: 100%;
+    border-bottom: .9rem solid $color-border-lines;
+    transition: 0.3s ease-out;
+    &:first-child {
+      border-top: .9rem solid $color-border-lines;
+    }
+    a {
+      display: inline-block;
+      width: 100%;
+      font-weight: 400;
+      font-size: 1.8rem;
+      line-height: 2.5rem;
+      padding: 2.5rem 0;
+      color: rgba($color-white, 0.6);
+      transition: color 0.3s;
+    }
+    &:hover {
+      background-color: $color-border-lines;
+    }
+  }
+  &__socialLinks {
+    padding: 0 5rem;
+  }
+  &__socialUl {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style: none;
+  }
+  &__socialLi {
+    padding: .5rem .5rem;
+  }
+  &__socialLink {}
+}
