@@ -30,7 +30,7 @@ const TransitionPage = ({ children }) => {
 
   return (
     <div className={styles.wrapper}>
-      <AnimatePresence initial={false} exitBeforeEnter >
+      <AnimatePresence initial={false} exitBeforeEnter="wait" >
         <motion.div
           key={asPath}
           variants={variants}
