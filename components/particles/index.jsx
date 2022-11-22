@@ -1,15 +1,17 @@
-import {useCallback} from "react";
+import { useCallback } from "react";
+import { useDispatch } from "react-redux";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
+import { firstLoadFinish } from '../../store/preloader'
 
 const Particle = () => {
+  const dispatch = useDispatch()
   const particlesInit = useCallback(async (engine) => {
-    console.log(engine);
     await loadFull(engine);
   }, []);
 
   const particlesLoaded = useCallback(async (container) => {
-    await console.log(container);
+    dispatch(firstLoadFinish(false))
   }, []);
 
   return (

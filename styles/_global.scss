@@ -1,14 +1,30 @@
-* {
+*, *::after, *::before {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
+	cursor: none;
+	@include respond(phone) {
+		cursor: auto;
+	}
 }
 
 html {
 	font-size: 62.5%;
-	// @include respond(big-screen) {
-	// 	font-size: 70%;
-	// }
+
+	&::-webkit-scrollbar {
+		width: .3rem;
+		background-color: rgba(255, 255, 255, 0.3);
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: #A472F4;
+		border-radius: .5rem;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: rgba(255, 255, 255, 0.3);
+		border-radius: .5rem;
+		box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+	}
+
 	@include respond(screen) {
 		font-size: 55%;
 	}
@@ -44,7 +60,7 @@ a {
 button {
 	background: transparent;
 	border: none;
-	cursor: pointer;
+	cursor: none;
 }
 
 .container {

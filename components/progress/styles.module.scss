@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.wrapper {
+  position: relative;
+  pointer-events: none;
+  z-index: 2;
+
+  .progressBar {
+    height: .2rem;
+    background-color: $button-contact_pressed_gradient;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
+}

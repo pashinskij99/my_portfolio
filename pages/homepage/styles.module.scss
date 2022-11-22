@@ -8,12 +8,27 @@
   display: flex;
   align-items: center;
   .title {
-    color: $color-white;
     margin-bottom: 3rem;
+    span {
+      display: inline-block;
+      background: $color-white;
+      -webkit-background-clip: text!important;
+      -webkit-text-fill-color: transparent!important;
+      transition: background 0.1s;
+      &:hover {
+       background: linear-gradient(86.26deg, #8E49FF 1.95%, #6C70FB 109.83%), #A162FB
+      }
+    }
   }
   .paragraph {
     color: $color-gray;
     margin-bottom: 5rem;
+  }
+  .hamburger {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 10000;
   }
 &__main {
     display: flex;

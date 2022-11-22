@@ -8,21 +8,47 @@
   width: $sidebar-width;
   height: 100vh;
   text-align: center;
-  background-color: rgba(13, 12, 12, 0.9);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  transform: translateX(0);
+  transform: translateY(0);
   z-index: 1;
-  transition: transform 0.3s ease-out;
-  @include respond(phone) {
-    transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  &:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background: #111111;
+    mix-blend-mode: difference;
+    width: $sidebar-width;
+    z-index: -1;
+    opacity: 0.9;
+    @include respond(phone) {
+      opacity: 1;
+    }
   }
-  &__logo {}
+  &.active {
+    transform: translateY(0);
+  }
+  @include respond(phone) {
+    transform: translateY(-100%);
+    width: 100%;
+    justify-content: space-evenly;
+    z-index: 2;
+    &:before {
+      width: 100%;
+    }
+  }
   &__logoImg {
     width: 6.6rem;
     height: 8rem;
+    @include respond(phone) {
+      width: 11.6rem;
+      height: 18rem;
+    }
   }
   &__nav {
     width: 100%;
@@ -51,9 +77,23 @@
       padding: 2.5rem 0;
       color: rgba($color-white, 0.6);
       transition: color 0.3s;
+      @include respond(phone) {
+        font-size: 3rem;
+        padding: 3.5rem 0;
+      }
+
+      @include respond(small-phone) {
+        font-size: 2.5rem;
+        padding: 2.5rem 0;
+      }
     }
     &:hover {
       background-color: $color-border-lines;
+    }
+    @include respond(phone) {
+      &:hover {
+        background-color: inherit;
+      }
     }
   }
   &__socialLinks {
@@ -63,9 +103,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     list-style: none;
+    @include respond(phone) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 2rem;
+    }
   }
   &__socialLi {
     padding: .5rem .5rem;
   }
-  &__socialLink {}
 }

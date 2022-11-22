@@ -1,0 +1,44 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .content {
+    margin-top: 2.4rem;
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    .nav {
+      background-color: #000000;
+      border-radius: .6rem .6rem 0 0;
+      padding: 2.5rem 4.6rem;
+      display: flex;
+      align-items: center;
+      a {
+        font-size: 1.8rem;
+        line-height: 117.9%;
+        letter-spacing: 0.06em;
+        color: #FFE742;
+        padding: 0 .7rem .3rem;
+        border-bottom: .1rem solid #FFE742;
+        border-radius: 0rem;
+        &:not(:first-child) {
+          margin-left: 2.5rem;
+        }
+      }
+    }
+
+    .iframeWrapper {
+      position: relative;
+      height: 100%;
+      flex-grow: 1;
+      .iframe {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

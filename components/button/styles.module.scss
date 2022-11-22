@@ -1,54 +1,101 @@
 @import '../../styles/variables';
 
 .btnContact {
+  position: relative;
   display: flex;
   align-items: center;
   background: $button-contact_default_loading_gradient;
   padding: 1.7rem 3rem 1.7rem 2.7rem;
   border: none;
   border-radius: .4rem;
-  transition: all .5s;
-  font-weight: 400;
-  font-size: 1.8rem;
-  letter-spacing: 0.04em;
-  color: $color-black;
-  &:focus {
-    background: $button-contact_focus_gradient;
-    filter: drop-shadow(.1rem .1rem 1rem rgba(102, 153, 255, 0.8)) drop-shadow(-.1rem -.1rem 1rem rgba(102, 153, 255, 0.8));
+  transition: all .5s ease-in-out;
+  span {
+    font-weight: 400;
+    font-size: 1.8rem;
+    letter-spacing: 0.04em;
+    color: $color-black;
+    z-index: 2;
   }
-  &:hover {
-    background: $button-contact_hover_gradient;
-    filter: none;
-  }
-  &:active {
-    background: $button-contact_pressed_gradient;
-    filter: none;
-  }
-
   &__icon {
     margin-left: 2.5rem;
+    z-index: 2;
+  }
+  &:before, &:after, span:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: .4rem;
+    transition: all .5s ease-in-out;
+    opacity: 0;
+    z-index: 1;
+  }
+
+  &:before {
+    background: $button-contact_hover_gradient;
+  }
+  &:after {
+    background: $button-contact_pressed_gradient;
+  }
+  span:before {
+    background: $button-contact_focus_gradient;
+  }
+
+  &:focus {
+    filter: drop-shadow(.01rem .01rem .01rem rgba(102, 153, 255, 0.8)) drop-shadow(-.01rem -.01rem 1rem rgba(102, 153, 255, 0.8));
+    span:before {
+      opacity: 1;
+    }
+  }
+  &:hover {
+    filter: none;
+    &:before {
+      opacity: 1;
+    }
+  }
+  &:active {
+    filter: none;
+    &:after {
+      opacity: 1;
+    }
   }
 }
 
 .btnResume {
-  cursor: pointer;
+  position: relative;
   padding: 1.7rem 2.6rem;
   background-color: transparent;
   border: .2rem solid rgba(163, 114, 244, 1);
   border-radius: .4rem;
-  color: #A372F4;
   transition: all 0.3s;
+
+  span {
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 25px;
+    letter-spacing: 0.06em;
+
+    color: #A372F4;
+    transition: color 0.3s;
+  }
+
   &:focus {
     background-color: $button-resume_focus_background;
   }
   &:hover {
     background-color: $button-resume_hover_gradient;
-    color: $color-black;
+    span {
+      color: $color-black;
+    }
   }
   &:active {
     background-color: $button-resume_pressed_background;
-    color: $button-resume_pressed-word-color;
     border-color: $button-resume_pressed_background;
+    span {
+      color: $button-resume_pressed-word-color;
+    }
   }
 }
 
@@ -59,4 +106,24 @@
   color: $button-resume_hover_gradient;
   border-bottom: .1rem solid $button-resume_hover_gradient;
   padding: 0 1rem;
+  &:hover {
+    animation-name: btnMoreHover;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+}
+
+@keyframes btnMoreHover {
+  0% {
+    padding: 0 1rem;
+  }
+  55% {
+    padding: 0 2rem;
+  }
+  80% {
+    padding: 0 0.6rem;
+  }
+  100% {
+    padding: 0 1rem;
+  }
 }

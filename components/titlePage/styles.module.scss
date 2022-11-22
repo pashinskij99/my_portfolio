@@ -6,15 +6,12 @@
   align-items: center;
   justify-content: space-between;
   padding-top: 8rem;
-  .hamburger {
-    display: none;
-    @include respond(phone) {
-      display: block;
-    }
-  }
   .title {
     white-space: nowrap;
     color: rgba($color-title-pages, 0.2);
+    .titleWord {
+      display: inline-block;
+    }
   }
   .hr {
     height: .2rem;
