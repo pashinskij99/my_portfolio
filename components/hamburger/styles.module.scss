@@ -1,0 +1,15 @@
+@import '../../styles/mixin';
+
+.wrapper {
+  display: none;
+  .hamburger {
+    width: 7.7rem;
+    height: 7.7rem;
+    pointer-events: none;
+    touch-action: none;
+  }
+  @include respond(phone) {
+    display: block;
+    z-index: 2;
+  }
+}

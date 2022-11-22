@@ -1,0 +1,72 @@
+@import '../../styles/variables';
+@import '../../styles/mixin';
+
+.wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  background-color: #1B1A1A;
+  .content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .h1 {
+      font-family: $font_aBlackLives;
+      font-weight: 900;
+      font-size: 14.4rem;
+      line-height: 117.9%;
+      letter-spacing: 0.03em;
+
+      color: rgba(255, 255, 255, 0.3);
+      padding: 0 7rem;
+      border-bottom: .2rem solid rgba($color-white, 0.1);
+      margin: 0;
+      margin-bottom: 4rem;
+    }
+    .paragraph {
+      font-size: 1.8rem;
+      line-height: 117.9%;
+      letter-spacing: 0.06em;
+
+      color: #FFFFFF;
+      margin-bottom: 4rem;
+    }
+    .btnHome {
+      background: #6699FF;
+      border-radius: 4px;
+      padding: 1.8rem 2.5rem;
+      display: flex;
+      align-items: center;
+      .arrow {}
+      span {
+        font-size: 1.8rem;
+        line-height: 117.9%;
+        letter-spacing: 0.06em;
+        color: $color-black;
+
+        margin-left: 2.3rem;
+      }
+    }
+
+    @include respond(phone) {
+      .h1 {
+        font-size: 9rem;
+        padding: 0 5.5rem;
+      }
+    }
+    @include respond(small-phone) {
+      // align-items: flex-start;
+      
+      .h1 {
+        font-size: 5rem;
+        padding: 0;
+        border: none;
+      }
+    }
+  }
+}

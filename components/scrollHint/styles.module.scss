@@ -1,0 +1,45 @@
+@import '../../styles/variables';
+
+.hrScroll {
+  position: absolute;
+  left: 12rem;
+  top: 0;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  hr {
+    height: 100%;
+    width: .2rem;
+    background-color: rgba($color-white, 0.05);
+    border: none;
+  }
+  .btnScrollToTop {
+    position: absolute;
+    bottom: 3rem;
+    width: 13rem;
+    right: 0rem;
+    white-space: nowrap;
+    transform: rotate(-90deg) translate(50%, 100%);
+    span {
+      font-weight: 600;
+      font-size: 2rem;
+      line-height: 117.9%;
+      letter-spacing: 0.05em;
+      color: rgba($color-white, 0.1);
+    }
+    .arrowRight {
+      margin-left: 2.5rem;
+      height: 1.5rem;
+      width: 2rem;
+      path {
+        stroke: rgba($color-white, 0.1);
+        stroke-width: 2px;
+      }
+    }
+  }
+}
