@@ -3,20 +3,23 @@
 
 .home {
   background: transparent;
+  top: 0;
+  left: 0;
   height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
+  position: absolute;
   .title {
     margin-bottom: 3rem;
     span {
       display: inline-block;
       background: $color-white;
-      -webkit-background-clip: text!important;
-      -webkit-text-fill-color: transparent!important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
       transition: background 0.1s;
       &:hover {
-       background: linear-gradient(86.26deg, #8E49FF 1.95%, #6C70FB 109.83%), #A162FB
+        background: linear-gradient(86.26deg, #8e49ff 1.95%, #6c70fb 109.83%), #a162fb;
       }
     }
   }
@@ -24,18 +27,12 @@
     color: $color-gray;
     margin-bottom: 5rem;
   }
-  .hamburger {
-    position: fixed;
-    top: 2rem;
-    right: 2rem;
-    z-index: 10000;
-  }
-&__main {
+  &__main {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
-    margin-left: 9rem;
+    margin-left: calc($sidebar-width + 9rem);
     z-index: 1;
     @include respond(phone) {
       margin-left: 2rem;

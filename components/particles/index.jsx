@@ -1,18 +1,18 @@
-import { useCallback } from "react";
-import { useDispatch } from "react-redux";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import { useCallback } from 'react'
+import { useDispatch } from 'react-redux'
+import Particles from 'react-tsparticles'
+import { loadFull } from 'tsparticles'
 import { firstLoadFinish } from '../../store/preloader'
 
 const Particle = () => {
   const dispatch = useDispatch()
   const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine);
-  }, []);
+    await loadFull(engine)
+  }, [])
 
   const particlesLoaded = useCallback(async (container) => {
     dispatch(firstLoadFinish(false))
-  }, []);
+  }, [])
 
   return (
     <Particles
@@ -36,11 +36,11 @@ const Particle = () => {
           events: {
             onClick: {
               enable: true,
-              mode: "push",
+              mode: 'push',
             },
             onHover: {
               enable: true,
-              mode: "repulse",
+              mode: 'repulse',
             },
             resize: true,
           },
@@ -56,10 +56,10 @@ const Particle = () => {
         },
         particles: {
           color: {
-            value: "transparent",
+            value: 'transparent',
           },
           links: {
-            color: "#ffffff",
+            color: '#ffffff',
             distance: 150,
             enable: true,
             opacity: 0.2,
@@ -69,10 +69,10 @@ const Particle = () => {
             enable: true,
           },
           move: {
-            directions: "none",
+            directions: 'none',
             enable: true,
             outModes: {
-              default: "bounce",
+              default: 'bounce',
             },
             random: false,
             speed: 1,
@@ -89,7 +89,7 @@ const Particle = () => {
             value: 0.5,
           },
           shape: {
-            type: "circle",
+            type: 'circle',
           },
           size: {
             value: { min: 1, max: 5 },

@@ -1,4 +1,3 @@
-import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import 'normalize.css'
 import React, { useEffect, useState } from 'react'
@@ -11,9 +10,12 @@ import { setIsAnimating } from '../store/progress'
 import Cursor from '../components/cursor'
 import { store } from '../store/store'
 import '../styles/index.scss'
+import useWindowSize from '../hooks/useWindowSize'
 
 const MyApp = ({ Component, pageProps }) => {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
+
+  const { width } = useWindowSize()
 
   useEffect(() => {
     setTimeout(() => setLoading(true), 1500)
@@ -25,15 +27,20 @@ const MyApp = ({ Component, pageProps }) => {
 
       {loading && (
         <div className='app'>
-          {window.innerWidth > 767 && <Cursor />}
+          {width > 767 && <Cursor />}
+
+          {/* <Header pageTitle={aboutMeTitle} />  */}
 
           <Loading />
 
           <SideBar />
 
+          {/* <Particle /> */}
+
           <TransitionPage>
             <Component {...pageProps} />
           </TransitionPage>
+          
         </div>
       )}
     </Provider>
@@ -59,16 +66,17 @@ const Loading = () => {
 
       const handler = () => {
         router.events.off('routeChangeComplete', handler)
-  
+
         window.setTimeout(() => {
           for (let copy of copies) {
             document.head.removeChild(copy)
           }
-        }, 1000)
+        }, 2000)
       }
 
       router.events.on('routeChangeComplete', handler)
     }
+
     const handleStart = () => dispatch(setIsAnimating(true))
     const handleStop = () => dispatch(setIsAnimating(false))
 
@@ -78,6 +86,7 @@ const Loading = () => {
     router.events.on('routeChangeError', handleStop)
 
     return () => {
+      router.events.off('beforeHistoryChange', handleFixStyle)
       router.events.off('routeChangeStart', handleStart)
       router.events.off('routeChangeComplete', handleStop)
       router.events.off('routeChangeError', handleStop)

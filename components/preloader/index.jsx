@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react'
-import { useNProgress } from "@tanem/react-nprogress";
+import React, { useEffect, useState } from 'react'
+import { useNProgress } from '@tanem/react-nprogress'
 import styles from './styles.module.scss'
-import clsx from 'clsx';
+import clsx from 'clsx'
 
-export const Preloader = ({isAnimating}) => {
-  const { isFinished, progress } = useNProgress({isAnimating})
+export const Preloader = ({ isAnimating }) => {
+  const { isFinished, progress } = useNProgress({ isAnimating })
   const [title, setTitle] = useState((-1 + progress) * 100)
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export const Preloader = ({isAnimating}) => {
         <h1 className={styles.h1}>{title}</h1>
         <p className={styles.subtitle}>Loading...</p>
       </div>
-      <div className={styles.progressBar}></div>
+      <div className={styles.progressBar} />
     </div>
   )
 }

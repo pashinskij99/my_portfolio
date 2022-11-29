@@ -5,6 +5,7 @@ import progressReducer from './progress'
 import preloaderReducer from './preloader'
 import cursorReducer from './cursor'
 import hamburgerReducer from './toggleHamburger'
+import pageAnimatedEndReducer from './toggleHamburger'
 
 export const store = configureStore({ 
   reducer: {
@@ -13,6 +14,7 @@ export const store = configureStore({
     preloader: preloaderReducer,
     cursor: cursorReducer,
     hamburger: hamburgerReducer,
+    pageAnimatedEnd: pageAnimatedEndReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(projectsApi.middleware)
 })
