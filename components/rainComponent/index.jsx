@@ -59,7 +59,7 @@ const RainComponent = () => {
     objects.prototype.draw = function () {
       context.globalAlpha = this.a
       context.save()
-      context.font = '10 ' + this.fontSize + 'px Open Sans'
+      context.font = '10 ' + this.fontSize + 'px Open Sans, sans-serif'
       context.fillText(this.symbols, this.x, this.y)
       context.restore()
       context.fillStyle = this.color
