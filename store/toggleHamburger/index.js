@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import {cursorSlice} from "../cursor";
 
 const initialState = {
   isHamburger: false,

@@ -33,11 +33,26 @@
       position: relative;
       height: 100%;
       flex-grow: 1;
-      .iframe {
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        width: .3rem;
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #A472F4;
+        border-radius: .5rem;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: .5rem;
+        box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+      }
+      img {
         position: absolute;
         display: block;
         width: 100%;
-        height: 100%;
+        height: max-content;
+        object-fit: contain;
       }
     }
   }

@@ -21,13 +21,16 @@
 		}
 		.worksList {
 			margin: 0 auto;
-			max-width: 100rem;
+			// max-width: 100rem;
+			// flex-grow: 0.8;
+			width: 100%;
+			// min-height: 50vh;
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			grid-gap: 1.9rem;
 			@include respond(tab-port) {
 				grid-template-columns: repeat(2, 1fr);
-				grid-gap: 4rem;
+				// grid-gap: 4rem;
 			}
 			@include respond(phone) {
 				grid-template-columns: 1fr;
@@ -81,7 +84,6 @@
 					transition: all 0.3s ease-out;
 				}
 				&:hover {
-					//transform: scale(1.05);
 					&::after, &::before {
 						opacity: 1;
 						visibility: visible;
@@ -95,6 +97,7 @@
 					img {
 						width: 100%;
 						height: 100%;
+						object-fit: fill;
 						border-radius: .2rem;
 					}
 				}

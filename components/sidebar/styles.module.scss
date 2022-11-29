@@ -68,6 +68,11 @@
     &:first-child {
       border-top: .9rem solid $color-border-lines;
     }
+    &_active {
+      a {
+        pointer-events: none;
+      }
+    }
     a {
       display: inline-block;
       width: 100%;

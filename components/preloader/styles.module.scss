@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
 .wrapper {
   position: fixed;
@@ -6,7 +6,7 @@
   left: 0;
   height: 100vh;
   width: 100%;
-  background-color: #1B1A1A;
+  background-color: #1b1a1a;
   z-index: 3;
   display: flex;
   justify-content: center;
@@ -28,7 +28,7 @@
       letter-spacing: 0.03em;
       margin: 0;
 
-      color: #BBBABA;
+      color: #bbbaba;
     }
 
     .subtitle {
@@ -38,7 +38,7 @@
 
       letter-spacing: 0.05em;
 
-      color: #B4B1C6;
+      color: #b4b1c6;
     }
   }
   .progressBar {
@@ -48,7 +48,14 @@
     transform: translate(-50%, -50%);
     width: 100%;
     height: 5px;
-    background: linear-gradient(90deg, rgba(87, 32, 163, 0.04) 2.37%, #5620A0 19.94%, #251B31 93.19%, rgba(27, 26, 26, 0.04) 97.45%, rgba(27, 26, 26, 0.04) 97.45%);
+    background: linear-gradient(
+      90deg,
+      rgba(87, 32, 163, 0.04) 2.37%,
+      #5620a0 19.94%,
+      #251b31 93.19%,
+      rgba(27, 26, 26, 0.04) 97.45%,
+      rgba(27, 26, 26, 0.04) 97.45%
+    );
     background-size: 400% 400%;
     animation: gradient 5s ease-in-out infinite;
   }

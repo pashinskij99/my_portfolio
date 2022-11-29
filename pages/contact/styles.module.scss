@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
 .contact {
   padding-bottom: 19rem;
@@ -23,7 +23,7 @@
       //background-size: 65%;
       .contactInner {
         width: 100%;
-        background: url("../../assets/images/contact/location.png") no-repeat center right;
+        background: url('../../assets/images/contact/location.png') no-repeat center right;
         background-size: 65%;
       }
       .contactHeader {
@@ -42,14 +42,13 @@
           line-height: 147.4%;
           margin-top: 2.5rem;
           span {
-            color: #7884F4;
-
+            color: #7884f4;
           }
           a {
-            color: #7884F4;
+            color: #7884f4;
             margin-left: 1.2rem;
-            padding: 0 .5rem 0.5rem;
-            border-bottom: .1rem solid #7884F4;
+            padding: 0 0.5rem 0.5rem;
+            border-bottom: 0.1rem solid #7884f4;
           }
         }
       }
