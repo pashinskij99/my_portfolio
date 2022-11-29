@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import styles from './styles.module.scss'
-import { index } from '../../constants'
+import { pageUrl } from '../../constants'
 import { ArrowLeft } from '../../components/iconsComponent'
 
 const Page404 = () => {
@@ -14,7 +14,7 @@ const Page404 = () => {
         <p className={styles.paragraph}>
           Such page does not exist or it has been deleted
         </p>
-        <Link href={index.home}>
+        <Link href={pageUrl.home}>
           <a className={styles.btnHome}>
             <ArrowLeft className={styles.arrow} />
             <span>Back home</span>
